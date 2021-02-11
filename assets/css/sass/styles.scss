@@ -1,0 +1,437 @@
+/*---------------------------->STYLE DOCUMENT FOR:------------------>
+---------------------------------->Portfolio-------------------->
+-------------------------------------------------------------------->*/
+
+
+
+/*-------------------------------------------------------------------->
+------------------------------>TABLE OF CONTENTS---------------->
+-------------------------------------------------------------------->
+
+---------------> UNIVERSAL STYLES
+
+---------------> HEADER/MAIN NAV
+
+---------------> FOOTER/FOOTER NAV
+
+---------------> MAIN CONTENT
+
+---------------> FORM STYLES
+
+---------------> RESPONVISE STYLES
+
+--------------------------------------------------------------->End Contents*/
+
+/*-------------------------------------------------------------------->
+------------------------------>Color Palette---------------->
+-------------------------------------------------------------------->
+
+Primary
+---------------> #037d34 => Dark Green
+
+---------------> #3778bb => Ocean Blue
+
+---------------> #abd2fa => Summer Sky
+
+---------------> #ecd160 => Golden Highlight
+
+---------------> #37e82b => Limelicious
+
+
+---------------> #4B5056 Text
+
+
+
+--------------------------------------------------------------->END Color Palette*/
+
+
+
+
+/*-------------------------------------------------------------------->
+------------------------------>`UNIVERSAL STYLES---------------->
+-------------------------------------------------------------------->*/
+
+/* Background pattern from Toptal Subtle Patterns 
+https://www.toptal.com/designers/subtlepatterns/trees-pattern/
+*/
+
+$primary: #037d34;
+
+$secondary: #3778bb;
+
+$complementary: #abd2fa;
+
+$golden: #ecd160;
+
+$lime: #37e82b;
+
+$text: #4B5056;
+
+$danger: #ff6947;
+
+
+:root {
+	--primary: #037d34;
+	--secondary: #3778bb;
+	--complementary: #abd2fa;
+	--golden: #ecd160;
+	--text: #4B5056;
+	--danger: #ff6947;
+}
+
+html, body {
+	height: 100%; 
+	margin: 0; 
+	overflow-x: hidden;
+}
+
+html {
+	font: 1rem sans-serif;
+	position: relative;
+	z-index: 0;
+}
+
+body {
+	background: url(./../imgs/trees.png) repeat;
+	height: 100vh;
+	position: relative;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6, label {
+	font-family: 'primary', sans-serif;
+}
+
+h2 {
+	background: var(--primary);
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #fff;
+	padding: .35rem;
+}
+
+p {
+	background: #fff;
+	line-height: 2;
+	padding: .85rem 1vw;
+}
+
+/* p::not(.btn) {
+	padding: 0 .5rem;
+} */
+
+/* .setup p {
+	padding: .8rem 0;
+}
+ */
+
+.btn, .page-title {
+	border: 2px solid $primary;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 500;
+	position: relative;
+	width: max-content;
+}
+
+.btn::before,.page-title::before {
+	background: rgba(0,0,0,0);
+	border: 2px solid white;
+	border-radius: 2px;
+	content: "";
+	height: calc(100% - 4px); 
+	left: 0;
+	position: absolute;
+	top: 0;
+	width:  calc(100% - 4px);
+} 
+
+.btn::after {
+	background: #52245F;
+	content: "";
+	height: 100%;
+	left: 5px;
+	opacity: .3;
+	position: absolute;
+	transition: all .15s;
+	top: 11%;
+	width: 100%;
+	z-index: -1;
+}
+
+.btn:focus::after, .btn:hover::after {
+	left: 3px;
+	top: 5%;
+}
+
+
+#main {
+	position: relative;
+	z-index: 1;
+}
+
+
+#dancer {
+	height:0;
+    left: 0;
+    max-width: 100vw;
+	padding-bottom:100%;
+	position:relative;
+	width:100%;
+}
+
+#dancer, #dancer + p {display: none;}
+
+.celebrate #dancer {
+	display: block;
+}
+
+
+/* --------------------------------------------------------------->END UNIVERSAL STYLES*/
+
+
+
+/*-------------------------------------------------------------------->
+------------------------------>`HEADER/MAIN NAV---------------->
+-------------------------------------------------------------------->*/
+.showIfDisabledJS {
+	position: absolute;
+	right: -600vw;
+}  
+
+.page-title {
+	background: $primary;
+	display: block;
+	font-size: 3rem;
+	margin:  10vh auto 3rem;
+	line-height: 1.25;
+	padding: .25rem .75rem .5rem;
+	width: fit-content; 
+}
+
+.home .page-title, .setup .page-title {font-size: 3.75rem;}
+
+.home .page-title {margin:  11vh auto 17vh;}
+
+/*noJS*/
+
+
+
+/* --------------------------------------------------------------->END HEADER/MAIN NAV*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------->
+------------------------------>`FOOTER/FOOTER NAV---------------->
+-------------------------------------------------------------------->*/
+
+footer {
+	background: #fff;
+	bottom:  0;
+	height: 2rem;
+	position: fixed;
+	text-align:  center;
+	width: 100vw;
+	min-height: 2rem;
+}
+
+
+/* 
+
+--------------------------------------------------------------->END FOOTER/FOOTER NAV*/
+
+
+
+
+
+/*-------------------------------------------------------------------->
+------------------------------>`MAIN CONTENT---------------->
+-------------------------------------------------------------------->*/
+
+ #main {
+ 	color:  $text;
+ 	padding: 0 9vw;
+ }
+
+ img {
+ 	margin: 1rem auto;
+	 max-width: 100%;
+ }
+
+.setup #main {
+	padding:  0;
+}
+
+#docSvg {
+	display: none;
+	height: 113vh;
+	left: -17%;
+	position: absolute;
+	top: -4%;
+	width: 137vw;
+}
+
+.home #docSvg, .setup #docSvg {
+	display: block;
+}
+
+.btn {
+	background: $secondary;
+	border-color: $secondary;
+	display: block;
+	line-height: 1.6;
+	margin:  1rem auto;
+	padding: .25rem 1rem 0;
+	font-size: 1.75rem;
+	width: fit-content; 
+}
+
+/* .btn-secondary {
+	border-color: $secondary;
+	background: $secondary;
+}
+ */
+
+ .home .btn:first-of-type, .btn-js {
+	border-color: $lime;
+	background: $lime;
+ }
+
+.homeLinks .btn{
+	font-size: 2.5rem;
+}
+
+.treatment-counter {
+	background: none;
+	color: var(--primary);
+	padding-top: 0;
+	text-align: center;
+}
+
+#timer {
+	color: $primary;
+	font-size: 2rem;
+	text-align:  center;
+}
+
+#timer.danger {
+	color: #ff2d2d;
+}
+
+.block {
+	background: black;
+	height: 100vh;
+	left: 0;
+	opacity: .4;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 10;
+}
+
+.game-response-container {
+	position: fixed;
+	top: 30vh;
+	width: 90vw;
+	left: 5vw;
+	z-index: 11;
+}
+
+.game-response-heading {
+	background: $primary;
+	color:  #fff;
+	font-size: 1.5rem;
+	padding: 1rem 0;
+	text-align: center;
+}
+
+.game-response-heading.danger {
+	background: #c30341;
+}
+
+.btn.dallas {background: url(./../imgs/dal.svg) no-repeat;}
+.btn.austin {background: url(./../imgs/aus.svg) no-repeat;}
+.btn.dallas, .btn.austin {
+	background-size: contain;
+	color: rgba(0,0,0,0);
+	padding: 4.75rem 2rem;
+}
+
+/* --------------------------------------------------------------->END MAIN CONTENT*/
+
+
+/*-------------------------------------------------------------------->
+------------------------------>`FORM STYLES---------------->
+-------------------------------------------------------------------->*/
+
+form {
+	padding: 0 0 1rem;
+}
+
+form input {
+	border-radius: 2px;
+	border: solid 3px $primary;
+	max-width: 25rem;
+	padding: .75rem;
+	width: 100%;
+}
+
+input.error {
+	border-color:  $danger;
+}
+
+label.error {
+	background: $danger;
+}
+
+form div {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	text-align: center;
+	width: 85vw;
+}
+
+form label {
+	background: var(--primary);
+	color: #fff;
+	font-size: 1.5rem;
+	margin: 2rem 0 0;
+	padding: .5rem 1rem;
+}
+
+form div:first-of-type label {margin: 0;}
+
+.submit {
+	background: $lime;
+	border-color: $lime;
+}
+
+.errorContainer .error {
+	background: $danger;
+	color: #fff;
+	font-size: 1.2rem;
+	margin: -1rem auto 1rem;
+	text-align: center;
+	width: 80vw;
+}
+
+/* --------------------------------------------------------------->END FORM STYLES*/
+
+
+/*-------------------------------------------------------------------->
+------------------------------>`RESPONVISE STYLES---------------->
+-------------------------------------------------------------------->*/
+
+/* --------------------------------------------------------------->END RESPONVISE STYLES*/
+
+
