@@ -3,7 +3,7 @@
 // handles dev vs live configurations
 $url = $_SERVER['SERVER_NAME'];
 
-define('ENVIRONMENT', 'dev');
+define('ENVIRONMENT', 'prod');
 
 // base url depending on whether we're online or not
 if (ENVIRONMENT === 'dev') {

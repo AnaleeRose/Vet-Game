@@ -2,8 +2,8 @@
 const content_container = document.querySelector("#main")
 let page_title = document.querySelector(".page-title")
 let timer, timerCountdown, timeEnded = false;
-// let BASE_URI = "http://talesfrom.space/vet/";
-let BASE_URI = "http://localhost/drgame/";
+let BASE_URI = "http://talesfrom.space/vet/";
+// let BASE_URI = "http://localhost/drgame/";
 
 home();
 enableSpecialLinks();
@@ -140,8 +140,6 @@ function failTimerGame() {
 
 function ajaxCall(fetch_url, body = false, testing = false) {
 	console.log("run")
-		// disableLinks();
-		// loading();
 		let type;
 		if (body === true) {
 			body = new FormData(document.querySelector("form"));
@@ -166,18 +164,13 @@ function ajaxCall(fetch_url, body = false, testing = false) {
 						data = response.text();
 					}
 
-					// console.log(response.text());
 				}
 				return data;
 			}).then((data) => {
 					if (!data) {
 						return;
 					}
-					console.log("data: ")
-					console.log(data)
-					// console.log(data)
 					if (!testing) {
-
 						if (data['error']) {
 							buildPage(data, data['error']);
 						} else {
@@ -415,44 +408,6 @@ function getFormInfo() {
 	return form_data;
 }
 
-// function timeGame(second_count) {
-// 	console.log("timegame")
-// }
-
-
-// creates the loading circle
-function loading() {
-	// loading_exists = document.querySelector("#loading")
-	// if (!loading_exists) {
-	// 	loading_text = document.createElement("span")
-	// 	loading_text.classList = "sr-only"
-
-
-	// 	loading_elem = document.createElement("p")
-	// 	loading_elem.classList = "spinner-border text-info m-5 p-5"
-	// 	loading_elem.setAttribute("role", "status")
-	// 	loading_elem.append(loading_text)
-
-	// 	loading_container = document.createElement("div")
-	// 	loading_container.classList = "text-center"
-	// 	loading_container.setAttribute("id", "loading")
-	// 	loading_container.append(loading_elem)
-
-	// 	content_container.classList.add("sr-only")
-	// 	append_to_page = document.querySelector("main")
-	// 	append_to_page.insertBefore(loading_container, content_container)
-	// }
-}
-
-// removes the loading circle
-function removeLoading() {
-	// loading_exists = document.querySelector("#loading")
-	// if (loading_exists) {
-	// 	content_container.classList.remove("sr-only")
-	// 	loading_elem = document.querySelector("#loading")
-	// 	loading_elem.parentElement.removeChild(loading_elem)
-	// }
-}
 
 // disables all those fetch links so they can't spam the server while it's getting a request
 function disableLinks() {
