@@ -14,6 +14,6 @@ if (ENVIRONMENT === 'dev') {
 } else {
     define('PUBLICROOT', '/var/www/html/talesfrom.space/public_html/vet');
     define('ROOT', '/var/www/html/talesfrom.space/public_html/vet/app');
-    define('BASE_URL', 'http://talesfrom.space/vet/');
-    define('BASE_URI', 'http://talesfrom.space/vet/');
+    define('BASE_URL', 'https://talesfrom.space/vet/');
+    define('BASE_URI', 'https://talesfrom.space/vet/');
 }

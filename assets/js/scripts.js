@@ -2,7 +2,7 @@
 const content_container = document.querySelector("#main")
 let page_title = document.querySelector(".page-title")
 let timer, timerCountdown, timeEnded = false;
-let BASE_URI = "http://talesfrom.space/vet/";
+let BASE_URI = "https://talesfrom.space/vet/";
 // let BASE_URI = "http://localhost/drgame/";
 
 home();
@@ -348,8 +348,6 @@ function buildLinks(page_info) {
 	if (links['container']) {
 		link_container.classList.add(links['container'])
 	}
-
-
 
 	if (links['timeGame']) {
 		let second_count = links['timeGame']
